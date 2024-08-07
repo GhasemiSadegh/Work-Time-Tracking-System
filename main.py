@@ -1,52 +1,60 @@
-from fastapi import FastAPI
-from database import init
-from models import Users, Projects, SessionWork
+from fastapi import FastAPI, Depends
+from database import init, get_session, Session
+from models import Users, Projects, SessionWork, select
 
 
 app = FastAPI()
-init()
+
 
 # Users
 
 
-@app.get('/users')
-def get_users():
+@app.get('/users', tags=["Users"])
+async def get_users(session: Session = Depends(get_session)):
+        all_users = session.exec(select(Users)).all()
+        session.close()
+        return all_users
+
+
+@app.post('/users/add', tags=["Users"])
+async def add_user(user: Users, session: Session = Depends(get_session)):
+    session.add(user)
+    session.commit()
+    session.close()
+    return "New user added."
+
+
+@app.put('users/update', tags=["Users"])
+async def update_user():
     pass
 
 
-@app.post('users/add')
-def add_user():
-    pass
-
-
-@app.put('users/update')
-def update_user():
-    pass
-
-
-@app.delete('users/delete')
-def delete_user():
+@app.delete('users/delete', tags=["Users"])
+async def delete_user():
     pass
 
 
 # Projects
 
 
-@app.get('/projects')
-def get_projects():
+@app.get('/projects', tags=["Projects"])
+async def get_projects():
     pass
 
 
-@app.post('projects/add')
-def add_project():
+@app.post('projects/add', tags=["Projects"])
+async def add_project():
     pass
 
 
-@app.put('projects/update')
-def update_project():
+@app.put('projects/update', tags=["Projects"])
+async def update_project():
     pass
 
 
-@app.delete('projects/delete')
-def delete_project():
+@app.delete('projects/delete', tags=["Projects"])
+async def delete_project():
     pass
+
+
+init()
