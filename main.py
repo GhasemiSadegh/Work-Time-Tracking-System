@@ -31,6 +31,11 @@ async def update_user(id: int, new: Users, session: Session = Depends(get_sessio
     selected.user_name = new.user_name
     selected.department = new.department
     selected.age = new.age
+    session.add(new)
+    session.refresh(selected)
+    session.commit()
+    session.close()
+    return "User updated."
 
 
 @app.delete('users/delete', tags=["Users"])
@@ -46,17 +51,17 @@ async def get_projects():
     pass
 
 
-@app.post('projects/add', tags=["Projects"])
+@app.post('/projects/add', tags=["Projects"])
 async def add_project():
     pass
 
 
-@app.put('projects/update', tags=["Projects"])
+@app.put('/projects/update', tags=["Projects"])
 async def update_project():
     pass
 
 
-@app.delete('projects/delete', tags=["Projects"])
+@app.delete('/projects/delete', tags=["Projects"])
 async def delete_project():
     pass
 
