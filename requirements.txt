@@ -1,0 +1,7 @@
+pydantic
+sqlalchemy
+sqlmodel
+fastapi
+uvicorn
+# pydantic == version
+# pip install -r .\requirements.txt
