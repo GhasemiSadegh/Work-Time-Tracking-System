@@ -24,9 +24,13 @@ async def add_user(user: Users, session: Session = Depends(get_session)):
     return "New user added."
 
 
-@app.put('users/update', tags=["Users"])
-async def update_user():
-    pass
+@app.put('/users/update/{id}', tags=["Users"])
+async def update_user(id: int, new: Users, session: Session = Depends(get_session)):
+    selected = session.exec(select(Users).where(Users.user_id == id)).first()
+    selected.user_id = new.user_id
+    selected.user_name = new.user_name
+    selected.department = new.department
+    selected.age = new.age
 
 
 @app.delete('users/delete', tags=["Users"])
