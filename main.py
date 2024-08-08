@@ -31,10 +31,9 @@ async def update_user(id: int, new: Users, session: Session = Depends(get_sessio
     selected.department = new.department
     selected.age = new.age
 
-    session.add(selected)
-    session.refresh(selected)
     session.commit()
-    return "User updated."
+    session.refresh(selected)
+    return {"message": "User updated successfully", "user": selected}
 
 
 @app.delete('users/delete/{id}', tags=["Users"])
@@ -108,5 +107,3 @@ async def delete_session(id: int, session: Session = Depends(get_session)):
     session.delete(selected)
     session.commit()
 
-
-init()
