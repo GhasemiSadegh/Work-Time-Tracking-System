@@ -16,3 +16,4 @@ def get_session():
 
 def init():
     SQLModel.metadata.create_all(engine)
+
