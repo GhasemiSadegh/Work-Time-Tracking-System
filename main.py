@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
-from database import init, get_session, Session
-from models import Users, Projects, SessionWork
-from sqlmodel import select
+from database import get_session
+from models import Users, Projects, SessionWork, init
+from sqlmodel import select, Session
 
 
 app = FastAPI()
