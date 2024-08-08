@@ -1,12 +1,17 @@
+from contextlib import contextmanager
 from sqlmodel import Session, create_engine, SQLModel
 
 DB_URL = 'sqlite:///records.sqlite'
 engine = create_engine(DB_URL, echo=True)
 
 
-def get_session() -> Session:
-    with Session(engine) as session:
+@contextmanager
+def get_session():
+    session = Session(engine)
+    try:
         yield session
+    finally:
+        session.close()
 
 
 def init():
