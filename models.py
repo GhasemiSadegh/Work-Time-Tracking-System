@@ -1,8 +1,8 @@
 from sqlmodel import SQLModel, Field, Relationship
 from typing import Optional, List
-from datetime import date, time, timedelta, datetime
+from datetime import date, time
 from database import init
-from pydantic import BaseModel
+
 
 time_format = "%H:%M"
 
