@@ -36,11 +36,12 @@ async def update_user(id: int, new: Users, session: Session = Depends(get_sessio
     return {"message": "User updated successfully", "user": selected}
 
 
-@app.delete('users/delete/{id}', tags=["Users"])
+@app.delete('/users/delete/{id}', tags=["Users"])
 async def delete_user(id: int, session: Session = Depends(get_session)):
     selected = session.exec(select(Users).where(Users.user_id == id)).first()
     session.delete(selected)
-
+    session.commit()
+    return "User removed successfully."
 
 # Projects
 
@@ -55,18 +56,20 @@ async def get_projects(session: Session = Depends(get_session)):
 async def add_project(project: Projects, session: Session = Depends(get_session)):
     session.add(project)
     session.commit()
+    return "Project added successfully."
 
 
 @app.put('/projects/update/{id}', tags=["Projects"])
 async def update_project(id: int, new: Projects, session: Session = Depends(get_session)):
-    selected = session.exec(select(Projects).where(Projects.project_id == id))
+    selected = session.exec(select(Projects).where(Projects.project_id == id)).first()
 
-    selected.project_id = new.project_id
     selected.project_name = new.project_name
     selected.description = new.description
+    selected.project_user = new.project_user
 
     session.commit()
     session.refresh(selected)
+    return "Project updated successfully."
 
 
 @app.delete('/projects/delete/{id}', tags=["Projects"])
@@ -74,6 +77,7 @@ async def delete_project(id: int, session: Session = Depends(get_session)):
     selected = session.exec(select(Projects).where(Projects.project_id == id)).first()
     session.delete(selected)
     session.commit()
+    return "Project deleted successfully."
 
 
 # Work sessions

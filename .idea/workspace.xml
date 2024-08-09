@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="back_populates revised and fixed.">
+    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="One user updated successfully.">
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/records.sqlite-journal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723135842855</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="One user updated successfully.">
+      <option name="closed" value="true" />
+      <created>1723137583462</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723137583462</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -138,6 +146,7 @@
     <MESSAGE value="All relationships and foreign keys created" />
     <MESSAGE value="Data base removed. Looking for errors." />
     <MESSAGE value="back_populates revised and fixed." />
-    <option name="LAST_COMMIT_MESSAGE" value="back_populates revised and fixed." />
+    <MESSAGE value="One user updated successfully." />
+    <option name="LAST_COMMIT_MESSAGE" value="One user updated successfully." />
   </component>
 </project>
