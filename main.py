@@ -100,7 +100,7 @@ async def user_sessions(session: Session = Depends(get_session)):
     return all_sessions
 
 
-@app.post('/sessions/add', tags=["WorkSession"])
+@app.post('/session/add', tags=["WorkSession"])
 async def add_session(req: SessionRequest, session: Session = Depends(get_session)):
     work_session = SessionWork()
     work_session.session_user = req.session_user
@@ -113,7 +113,7 @@ async def add_session(req: SessionRequest, session: Session = Depends(get_sessio
     return "Session added successfully."
 
 
-@app.put('/sessions/update/{id}', tags=["WorkSession"])
+@app.put('/session/update/{id}', tags=["WorkSession"])
 async def update_session(id: int, new: SessionWork, session: Session = Depends(get_session)):
     selected = session.exec(select(SessionWork).where(SessionWork.session_id == id)).first()
     selected.start_time = new.start_time
@@ -122,7 +122,7 @@ async def update_session(id: int, new: SessionWork, session: Session = Depends(g
     session.refresh(selected)
 
 
-@app.delete('/work-session/delete/{id}', tags=['WorkSession'])
+@app.delete('/session/delete/{id}', tags=['WorkSession'])
 async def delete_session(id: int, session: Session = Depends(get_session)):
     selected = session.exec(select(SessionWork).where(SessionWork.session_id == id)).first()
     session.delete(selected)
