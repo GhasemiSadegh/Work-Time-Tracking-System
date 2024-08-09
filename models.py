@@ -1,7 +1,8 @@
 from sqlmodel import SQLModel, Field, Relationship
 from typing import Optional, List
-from datetime import date, time, timedelta
+from datetime import date, time, timedelta, datetime
 from database import init
+from pydantic import BaseModel
 
 time_format = "%H:%M"
 
@@ -19,7 +20,7 @@ class Users(SQLModel, table=True):
 
 class Projects(SQLModel, table=True):
     project_id: Optional[int] = Field(default=None, primary_key=True)
-    project_name: str = Field(default=None, min_length=3, max_length=20)
+    project_name: str = Field(default=None, min_length=2, max_length=20)
     description: Optional[str] = Field(default=None, max_length=250)
     project_user: str = Field(default=None, foreign_key="users.user_name")
 
@@ -32,14 +33,14 @@ class SessionWork(SQLModel, table=True):
     session_id: Optional[int] = Field(default=None, primary_key=True)
     session_user: str = Field(default=None, foreign_key="users.user_name")
     session_project: str = Field(default=None, foreign_key="projects.project_name")
-
     date: date
-    start_time: time = Field(default=None)
-    end_time: time = Field(default=None)
+    start_time: time
+    end_time: time
 
-    @property
-    def length(self) -> timedelta:
-        return self.end_time - self.start_time
+
+    # @property
+    # def length(self) -> timedelta:
+    #     return self.end_time - self.start_time
 
     # relationships
     user: "Users" = Relationship(back_populates="sessions")

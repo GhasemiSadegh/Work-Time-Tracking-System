@@ -1,7 +1,10 @@
+import uvicorn
 from fastapi import FastAPI, Depends
 from database import get_session
 from models import Users, Projects, SessionWork, init
 from sqlmodel import select, Session
+from request_models import SessionRequest, ProjectRequest, UsersRequest
+from datetime import date, time, datetime
 
 
 app = FastAPI()
@@ -17,7 +20,11 @@ async def get_users(session: Session = Depends(get_session)):
 
 
 @app.post('/users/add', tags=["Users"])
-async def add_user(user: Users, session: Session = Depends(get_session)):
+async def add_user(req: UsersRequest, session: Session = Depends(get_session)):
+    user = Users()
+    user.user_name = req.user_name
+    user.department = req.department
+    user.age = req.age
     session.add(user)
     session.commit()
     return "New user added."
@@ -53,7 +60,11 @@ async def get_projects(session: Session = Depends(get_session)):
 
 
 @app.post('/projects/add', tags=["Projects"])
-async def add_project(project: Projects, session: Session = Depends(get_session)):
+async def add_project(req: ProjectRequest, session: Session = Depends(get_session)):
+    project = Projects()
+    project.project_name = req.project_name
+    project.project_user = req.project_user
+    project.description = req.description
     session.add(project)
     session.commit()
     return "Project added successfully."
@@ -83,20 +94,26 @@ async def delete_project(id: int, session: Session = Depends(get_session)):
 # Work sessions
 
 
-@app.get('/work-sessions', tags=["WorkSession"])
+@app.get('/sessions', tags=["WorkSession"])
 async def user_sessions(session: Session = Depends(get_session)):
     all_sessions = session.exec(select(SessionWork)).all()
     return all_sessions
 
 
-@app.post('/work-sessions/add', tags=["WorkSession"])
-async def add_session(work_session: SessionWork, session: Session = Depends(get_session)):
+@app.post('/sessions/add', tags=["WorkSession"])
+async def add_session(req: SessionRequest, session: Session = Depends(get_session)):
+    work_session = SessionWork()
+    work_session.session_user = req.session_user
+    work_session.session_project = req.session_project
+    work_session.start_time = req.start_time
+    work_session.date = req.date
+    work_session.end_time = req.end_time
     session.add(work_session)
     session.commit()
     return "Session added successfully."
 
 
-@app.put('/work-sessions/update/{id}', tags=["WorkSession"])
+@app.put('/sessions/update/{id}', tags=["WorkSession"])
 async def update_session(id: int, new: SessionWork, session: Session = Depends(get_session)):
     selected = session.exec(select(SessionWork).where(SessionWork.session_id == id)).first()
     selected.start_time = new.start_time
@@ -111,3 +128,6 @@ async def delete_session(id: int, session: Session = Depends(get_session)):
     session.delete(selected)
     session.commit()
 
+
+if __name__ == "__main__":
+    uvicorn.run(app, port=8005, host="localhost")
