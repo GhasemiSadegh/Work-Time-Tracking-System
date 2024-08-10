@@ -117,12 +117,13 @@ async def add_session(req: SessionRequest, session: Session = Depends(get_sessio
 async def update_session(id: int, new: SessionRequest, session: Session = Depends(get_session)):
     selected = session.exec(select(SessionWork).where(SessionWork.session_id == id)).first()
     selected.session_user = new.session_user
-    selected.session_project = new.session_user
+    selected.session_project = new.session_project
     selected.date - new.date
     selected.start_time = new.start_time
     selected.end_time = new.end_time
     session.commit()
     session.refresh(selected)
+    return "Session updated successfully."
 
 
 @app.delete('/session/delete/{id}', tags=['WorkSession'])
