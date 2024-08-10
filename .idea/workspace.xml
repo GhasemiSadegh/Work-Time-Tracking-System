@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="DB navigator removed because it caused locked database error. Removed user parameter from class Projects (logic issue). Relationships updated accordingly.">
+    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="Requests body, model and main class for Projects also updated based on removing user.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/request_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/request_models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723299740106</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Requests body, model and main class for Projects also updated based on removing user.">
+      <option name="closed" value="true" />
+      <created>1723300668777</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1723300668777</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -246,6 +253,7 @@
     <MESSAGE value="Foreign Keys recognized in DB Navigator." />
     <MESSAGE value="Extra imports removed after updating requests and database classes." />
     <MESSAGE value="DB navigator removed because it caused locked database error. Removed user parameter from class Projects (logic issue). Relationships updated accordingly." />
-    <option name="LAST_COMMIT_MESSAGE" value="DB navigator removed because it caused locked database error. Removed user parameter from class Projects (logic issue). Relationships updated accordingly." />
+    <MESSAGE value="Requests body, model and main class for Projects also updated based on removing user." />
+    <option name="LAST_COMMIT_MESSAGE" value="Requests body, model and main class for Projects also updated based on removing user." />
   </component>
 </project>

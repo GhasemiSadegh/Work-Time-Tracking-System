@@ -71,11 +71,11 @@ async def add_project(req: ProjectRequest, session: Session = Depends(get_sessio
 
 
 @app.put('/projects/update/{id}', tags=["Projects"])
-async def update_project(id: int, new: ProjectRequest, session: Session = Depends(get_session)):
+async def update_project(id: int, req: ProjectRequest, session: Session = Depends(get_session)):
     selected = session.exec(select(Projects).where(Projects.project_id == id)).first()
 
-    selected.project_name = new.project_name
-    selected.description = new.description
+    selected.project_name = req.project_name
+    selected.description = req.description
     # selected.project_user = new.project_user
 
     session.commit()
@@ -114,8 +114,11 @@ async def add_session(req: SessionRequest, session: Session = Depends(get_sessio
 
 
 @app.put('/session/update/{id}', tags=["WorkSession"])
-async def update_session(id: int, new: SessionWork, session: Session = Depends(get_session)):
+async def update_session(id: int, new: SessionRequest, session: Session = Depends(get_session)):
     selected = session.exec(select(SessionWork).where(SessionWork.session_id == id)).first()
+    selected.session_user = new.session_user
+    selected.session_project = new.session_user
+    selected.date - new.date
     selected.start_time = new.start_time
     selected.end_time = new.end_time
     session.commit()
