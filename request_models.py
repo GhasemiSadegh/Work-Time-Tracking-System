@@ -12,7 +12,7 @@ class UserRequest(BaseModel):
 class ProjectRequest(BaseModel):
     project_name: str = Field(default=None, min_length=2, max_length=20)
     description: Optional[str] = Field(default=None, max_length=250)
-    project_user: str = Field(default=None)
+    # project_user: str = Field(default=None)
 
 
 class SessionRequest(BaseModel):

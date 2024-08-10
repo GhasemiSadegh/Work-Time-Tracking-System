@@ -31,7 +31,7 @@ async def add_user(req: UserRequest, session: Session = Depends(get_session)):
 
 
 @app.put('/users/update/{id}', tags=["Users"])
-async def update_user(id: int, new: Users, session: Session = Depends(get_session)):
+async def update_user(id: int, new: UserRequest, session: Session = Depends(get_session)):
     selected = session.exec(select(Users).where(Users.user_id == id)).first()
 
     selected.user_name = new.user_name
@@ -63,7 +63,7 @@ async def get_projects(session: Session = Depends(get_session)):
 async def add_project(req: ProjectRequest, session: Session = Depends(get_session)):
     project = Projects()
     project.project_name = req.project_name
-    project.project_user = req.project_user
+    # project.project_user = req.project_user
     project.description = req.description
     session.add(project)
     session.commit()
@@ -71,12 +71,12 @@ async def add_project(req: ProjectRequest, session: Session = Depends(get_sessio
 
 
 @app.put('/projects/update/{id}', tags=["Projects"])
-async def update_project(id: int, new: Projects, session: Session = Depends(get_session)):
+async def update_project(id: int, new: ProjectRequest, session: Session = Depends(get_session)):
     selected = session.exec(select(Projects).where(Projects.project_id == id)).first()
 
     selected.project_name = new.project_name
     selected.description = new.description
-    selected.project_user = new.project_user
+    # selected.project_user = new.project_user
 
     session.commit()
     session.refresh(selected)
