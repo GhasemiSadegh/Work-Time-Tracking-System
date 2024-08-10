@@ -3,8 +3,7 @@ from fastapi import FastAPI, Depends
 from database import get_session
 from models import Users, Projects, SessionWork
 from sqlmodel import select, Session
-from request_models import SessionRequest, ProjectRequest, UsersRequest
-# from datetime import date, time, datetime
+from request_models import SessionRequest, ProjectRequest, UserRequest
 
 
 app = FastAPI()
@@ -20,13 +19,14 @@ async def get_users(session: Session = Depends(get_session)):
 
 
 @app.post('/users/add', tags=["Users"])
-async def add_user(req: UsersRequest, session: Session = Depends(get_session)):
+async def add_user(req: UserRequest, session: Session = Depends(get_session)):
     user = Users()
     user.user_name = req.user_name
     user.department = req.department
     user.age = req.age
     session.add(user)
     session.commit()
+    session.close()
     return "New user added."
 
 
@@ -127,6 +127,7 @@ async def delete_session(id: int, session: Session = Depends(get_session)):
     selected = session.exec(select(SessionWork).where(SessionWork.session_id == id)).first()
     session.delete(selected)
     session.commit()
+    return "Session deleted successfully."
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@ from datetime import date, time
 from typing import Optional
 
 
-class UsersRequest(BaseModel):
+class UserRequest(BaseModel):
     user_name: str = Field(default=None, min_length=3, max_length=50)
     department: str = Field(default=None, min_length=3, max_length=50)
     age: int = Field(default=18, ge=18, le=67)
