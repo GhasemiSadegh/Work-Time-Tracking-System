@@ -7,9 +7,10 @@ from fastapi.testclient import TestClient
 from main import app
 
 
+# Testing get method for users
 class GetUsersAll(unittest.TestCase):
 
-    def setUp(self):
+    def setUp(self):  # Prepares the environment for each test method
         self.client = TestClient(app)
 
     def test_get_users_with_data(self):
@@ -29,9 +30,28 @@ class GetUsersAll(unittest.TestCase):
 
     def test_get_users_no_data(self):
         mock_session = MagicMock(spec=Session)
-        mock_user= []
+        mock_user = []
         mock_session.exec.return_value.all.return_value = lambda: mock_session
         response = self.client.get("/users")
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), 'Please add a user first. The list is empty.')
+
+
+# Testing add method for a user
+
+
+class AddUser(unittest.TestCase):
+    def setUp(self):
+        self.client = TestClient(app)
+
+    def test_add_user_input_right(self):
+        response = self.client.post("/users/add", json={"user_id": 1,
+                                                        "user_name": "Paul",
+                                                        "department": "Customers",
+                                                        "age": 19}
+                                    )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), "New user added.")
+
+    def test_add_user_short_name(self):

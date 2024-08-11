@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="Unittest for get all users with mock data created and passed">
+    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="Unittest for get all users without mock data created and passed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/request_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/request_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +40,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python tests.Python tests in tests.py.executor": "Run",
+    "Python tests.Python tests in tests_main.py.executor": "Run",
     "Python.main.executor": "Run",
     "Python.models.executor": "Run",
     "Python.request_models.executor": "Run",
@@ -45,6 +49,11 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\python2024\WorkTimeTrackingSystem\tests" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="WorkTimeTrackingSystem" />
@@ -273,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723378972367</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Unittest for get all users without mock data created and passed">
+      <option name="closed" value="true" />
+      <created>1723382207354</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1723382207354</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -299,6 +316,7 @@
     <MESSAGE value="Starting the non-functional aspects" />
     <MESSAGE value="httpx and pytest installed. Tests file created." />
     <MESSAGE value="Unittest for get all users with mock data created and passed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unittest for get all users with mock data created and passed" />
+    <MESSAGE value="Unittest for get all users without mock data created and passed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unittest for get all users without mock data created and passed" />
   </component>
 </project>

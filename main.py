@@ -3,9 +3,9 @@ from fastapi import FastAPI, Depends
 from database import get_session
 from models import Users, Projects, SessionWork
 from sqlmodel import select, Session, and_
+from datetime import datetime, timedelta
 from request_models import (SessionRequest, ProjectRequest, UserRequest, ProjectSessionRetriever, UserSessionRetriever,
                             OneProjectOneUser)
-from datetime import datetime, timedelta
 
 app = FastAPI()
 
