@@ -18,6 +18,7 @@ async def get_users(session: Session = Depends(get_session)):
     all_users = session.exec(select(Users)).all()
     if all_users:
         return all_users
+    return "Please add a user first. The list is empty."
 
 
 @app.post('/users/add', tags=["Users"])
