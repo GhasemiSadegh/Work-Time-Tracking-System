@@ -55,3 +55,10 @@ class AddUser(unittest.TestCase):
         self.assertEqual(response.json(), "New user added.")
 
     def test_add_user_short_name(self):
+        response = self.client.post("/users/add", json={"user_id": 1,
+                                                        "user_name": "Pa",
+                                                        "department": "Customers",
+                                                        "age": 19})
+
+        self.assertEqual(response.status_code, 422)
+        self.assertEqual(response.json(), "The user name must be between 3 to 50 characters.")

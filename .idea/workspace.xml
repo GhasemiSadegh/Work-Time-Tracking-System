@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="Unittest for get all users without mock data created and passed">
+    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="Unittest for adding user with correct input created">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/request_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/request_models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tests_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_main.py" afterDir="false" />
     </list>
@@ -54,7 +55,7 @@
       <recent name="C:\python2024\WorkTimeTrackingSystem\tests" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="WorkTimeTrackingSystem" />
       <option name="ENV_FILES" value="" />
@@ -92,9 +93,25 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in tests_main.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="WorkTimeTrackingSystem" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/tests_main.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python tests.Python tests in tests_main.py" />
       </list>
     </recent_temporary>
   </component>
@@ -290,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723382207354</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Unittest for adding user with correct input created">
+      <option name="closed" value="true" />
+      <created>1723383856132</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1723383856132</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -317,6 +342,7 @@
     <MESSAGE value="httpx and pytest installed. Tests file created." />
     <MESSAGE value="Unittest for get all users with mock data created and passed" />
     <MESSAGE value="Unittest for get all users without mock data created and passed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unittest for get all users without mock data created and passed" />
+    <MESSAGE value="Unittest for adding user with correct input created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unittest for adding user with correct input created" />
   </component>
 </project>
