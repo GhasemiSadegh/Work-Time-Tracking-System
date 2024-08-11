@@ -13,7 +13,7 @@ class GetUsersAll(unittest.TestCase):
         self.client = TestClient(app)
 
     def test_get_users_with_data(self):
-        mock_session = MagicMock(spec=Session)
+        mock_session = MagicMock(spec=Session)  # the mock should mimic the interface of the given class, Session
         mock_users = [Users(user_id=1, user_name="Paul", department="Customers", age=19),
                       Users(user_id=2, user_name="Samuel", department="Office", age=55)]
         mock_session.exec.return_value.all.return_value = mock_users
@@ -26,3 +26,12 @@ class GetUsersAll(unittest.TestCase):
         self.assertEqual(response.json(),
                          [{"user_id": 1, "user_name": "Paul", "department": "Customers", "age": 19},
                           {"user_id": 2, "user_name": "Samuel", "department": "Office", "age": 55}])
+
+    def test_get_users_no_data(self):
+        mock_session = MagicMock(spec=Session)
+        mock_user= []
+        mock_session.exec.return_value.all.return_value = lambda: mock_session
+        response = self.client.get("/users")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), 'Please add a user first. The list is empty.')

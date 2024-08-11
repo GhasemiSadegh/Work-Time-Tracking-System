@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="httpx and pytest installed. Tests file created.">
-      <change afterPath="$PROJECT_DIR$/tests_main.py" afterDir="false" />
+    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="Unittest for get all users with mock data created and passed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723368876429</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Unittest for get all users with mock data created and passed">
+      <option name="closed" value="true" />
+      <created>1723378972367</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1723378972367</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -292,6 +298,7 @@
     <MESSAGE value="ALl 4 methods for all classes and requests updated and running without error." />
     <MESSAGE value="Starting the non-functional aspects" />
     <MESSAGE value="httpx and pytest installed. Tests file created." />
-    <option name="LAST_COMMIT_MESSAGE" value="httpx and pytest installed. Tests file created." />
+    <MESSAGE value="Unittest for get all users with mock data created and passed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unittest for get all users with mock data created and passed" />
   </component>
 </project>
