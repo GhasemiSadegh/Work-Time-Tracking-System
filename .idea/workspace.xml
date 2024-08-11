@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="Starting the non-functional aspects">
+    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="httpx and pytest installed. Tests file created.">
+      <change afterPath="$PROJECT_DIR$/tests_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +38,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python tests.Python tests in tests.py.executor": "Run",
     "Python.main.executor": "Run",
     "Python.models.executor": "Run",
     "Python.request_models.executor": "Run",
@@ -257,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723367011482</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="httpx and pytest installed. Tests file created.">
+      <option name="closed" value="true" />
+      <created>1723368876429</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1723368876429</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -281,6 +291,7 @@
     <MESSAGE value="Update_session revised and completed with all features of a session except the id." />
     <MESSAGE value="ALl 4 methods for all classes and requests updated and running without error." />
     <MESSAGE value="Starting the non-functional aspects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting the non-functional aspects" />
+    <MESSAGE value="httpx and pytest installed. Tests file created." />
+    <option name="LAST_COMMIT_MESSAGE" value="httpx and pytest installed. Tests file created." />
   </component>
 </project>
