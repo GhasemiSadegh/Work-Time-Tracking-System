@@ -1,5 +1,6 @@
 import uvicorn
 from fastapi import FastAPI, Depends, HTTPException
+from pydantic import ValidationError
 from database import get_session
 from models import Users, Projects, SessionWork
 from sqlmodel import select, Session, and_
@@ -23,8 +24,8 @@ async def get_users(session: Session = Depends(get_session)):
 
 @app.post('/users/add', tags=["Users"])
 async def add_user(req: UserRequest, session: Session = Depends(get_session)):
-    if 3 > len(req.user_name) or len(req.user_name) > 50:
-        raise HTTPException(status_code=422, detail="The user name must be between 3 to 50 characters.")
+    # if 3 > len(req.user_name) or len(req.user_name) > 50:
+    #     raise HTTPException(status_code=422, detail="The user name must be between 3 to 50 characters.")
 
     user = Users()
     user.user_name = req.user_name
@@ -32,7 +33,6 @@ async def add_user(req: UserRequest, session: Session = Depends(get_session)):
     user.age = req.age
     session.add(user)
     session.commit()
-    session.close()
     return "New user added."
 
 
