@@ -34,11 +34,6 @@ class SessionWork(SQLModel, table=True):
     start_time: time
     end_time: time
 
-
-    # @property
-    # def length(self) -> timedelta:
-    #     return self.end_time - self.start_time
-
     # relationships
     user: "Users" = Relationship(back_populates="sessions")
     project: "Projects" = Relationship(back_populates="sessions")

@@ -16,8 +16,21 @@ class ProjectRequest(BaseModel):
 
 
 class SessionRequest(BaseModel):
-    session_user: str = Field(default=None)
+    session_user: str
     session_project: str
     date: date
     start_time: time
     end_time: time
+
+
+class ProjectSessionRetriever(BaseModel):
+    project_name: str
+
+
+class UserSessionRetriever(BaseModel):
+    user_name: str
+
+
+class OneProjectOneUser(BaseModel):
+    user_name: str
+    project_name: str

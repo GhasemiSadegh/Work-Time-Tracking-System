@@ -2,9 +2,10 @@ import uvicorn
 from fastapi import FastAPI, Depends
 from database import get_session
 from models import Users, Projects, SessionWork
-from sqlmodel import select, Session
-from request_models import SessionRequest, ProjectRequest, UserRequest
-
+from sqlmodel import select, Session, and_
+from request_models import (SessionRequest, ProjectRequest, UserRequest, ProjectSessionRetriever, UserSessionRetriever,
+                            OneProjectOneUser)
+from datetime import datetime, timedelta
 
 app = FastAPI()
 
@@ -15,7 +16,8 @@ app = FastAPI()
 @app.get('/users', tags=["Users"])
 async def get_users(session: Session = Depends(get_session)):
     all_users = session.exec(select(Users)).all()
-    return all_users
+    if all_users:
+        return all_users
 
 
 @app.post('/users/add', tags=["Users"])
@@ -49,6 +51,7 @@ async def delete_user(id: int, session: Session = Depends(get_session)):
     session.delete(selected)
     session.commit()
     return "User removed successfully."
+
 
 # Projects
 
@@ -132,6 +135,48 @@ async def delete_session(id: int, session: Session = Depends(get_session)):
     session.delete(selected)
     session.commit()
     return "Session deleted successfully."
+
+
+# Retrievers
+def length_calculator(start_time: str, end_time: str):
+    start = datetime.strptime(start_time, "%H:%M:%S.%f")
+    end = datetime.strptime(end_time, "%H:%M:%S.%f")
+    return end - start
+
+
+@app.put("/project-sessions/all", tags=["Retrievers"])
+def project_all_sessions(req: ProjectSessionRetriever, session: Session = Depends(get_session)):
+    all_sessions = session.exec(select(SessionWork).where(SessionWork.session_project == req.project_name)
+                                ).all()
+
+    total_duration = timedelta()
+    for user in all_sessions:
+        session_length = length_calculator(str(user.start_time), str(user.end_time))
+        total_duration += session_length
+    total_duration_str = str(total_duration)
+    return total_duration_str
+
+
+@app.put("/user-sessions/all", tags=["Retrievers"])
+def user_all_sessions(req: UserSessionRetriever, session: Session = Depends(get_session)):
+    all_sessions = session.exec(select(SessionWork).where(SessionWork.session_user == req.user_name)).all()
+    total_duration = timedelta()
+    for user in all_sessions:
+        session_length = length_calculator(str(user.start_time), str(user.end_time))
+        total_duration += session_length
+    total_duration_str = str(total_duration)
+    return total_duration_str
+
+
+@app.put("/user-sessions/one-user", tags=["Retrievers"])
+def one_user_one_project(req: OneProjectOneUser, session: Session = Depends(get_session)):
+    user_project = (session.exec(select(SessionWork).where(and_
+                                                           (SessionWork.session_user == req.user_name,
+                                                            SessionWork.session_project == req.project_name)
+                                                           )).all())
+    for user in user_project:
+        session_length = length_calculator(str(user.start_time), str(user.end_time))
+        return session_length
 
 
 if __name__ == "__main__":
