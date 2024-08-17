@@ -61,4 +61,23 @@ class AddUser(unittest.TestCase):
                                                         "age": 19})
 
         self.assertEqual(response.status_code, 422)
-        self.assertEqual(response.json(), "The user name must be between 3 to 50 characters.")
+        self.assertEqual(response.json(), {
+            "detail": [{"type": "string_too_short", "loc": ["body", "user_name"],
+                        "msg": "String should have at least 3 characters", "input": "Pa", "ctx": {"min_length": 3}}]})
+
+
+class AddSession(unittest.TestCase):
+    def setUp(self):
+        self.client = TestClient(app)
+
+    def test_add_session(self):
+        response = self.client.post("/session/add", json={"session_user": "Ali",
+                                                          "session_project": "Linux",
+                                                          "date": "2024-08-17",
+                                                          "start_time": "17:00:52.110Z",
+                                                          "end_time": "17:14:52.110Z"
+                                                          }
+                                    )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), "Session added successfully.")
+        

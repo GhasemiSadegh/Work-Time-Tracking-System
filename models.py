@@ -6,9 +6,9 @@ from database import init
 
 class Users(SQLModel, table=True):
     user_id: Optional[int] = Field(default=None, primary_key=True)
-    user_name: str # = Field(default=None, min_length=3, max_length=50)
+    user_name: str = Field(default=None, min_length=3, max_length=50)
     department: str = Field(default=None, min_length=3, max_length=50)
-    age: int = Field(default=18, ge=18, le=67)  # legal working-age band
+    age: int = Field(default=18, ge=18, le=67)
 
     # relationships
     sessions: List["SessionWork"] = Relationship(back_populates="user")
