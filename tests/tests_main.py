@@ -80,4 +80,6 @@ class AddSession(unittest.TestCase):
                                     )
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), "Session added successfully.")
-        
+
+    def test_add_session_negative_time(self):
+        response =
