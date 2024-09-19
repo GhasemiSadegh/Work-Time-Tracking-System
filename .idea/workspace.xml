@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="Unit test created for adding a session. Negative time to be avoided.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/request_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/request_models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tests_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +53,7 @@
       <recent name="C:\python2024\WorkTimeTrackingSystem\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in tests_main.py">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="WorkTimeTrackingSystem" />
       <option name="ENV_FILES" value="" />
@@ -128,8 +130,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests in tests_main.py" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python tests.Python tests in tests_main.py" />
         <item itemvalue="Python.request_models" />
       </list>
     </recent_temporary>
@@ -358,7 +360,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723916912834</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Unit test created for adding a session. Negative time to be avoided.">
+      <option name="closed" value="true" />
+      <created>1723918903165</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1723918903165</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

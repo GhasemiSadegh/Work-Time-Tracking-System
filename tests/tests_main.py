@@ -82,4 +82,8 @@ class AddSession(unittest.TestCase):
         self.assertEqual(response.json(), "Session added successfully.")
 
     def test_add_session_negative_time(self):
-        response =
+        response = self.client.post("/session/add", json={"session_user": "Ali",
+                                                          "session_project": "Linux",
+                                                          "date": "2024-08-17",
+                                                          "start_time": "18:00:52.110Z",
+                                                          "end_time": "17:14:52.110Z"})
