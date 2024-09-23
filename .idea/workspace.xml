@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="Review of the previous codes">
+    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="@validator replaced with @field_validator (pydantic V2)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/request_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/request_models.py" afterDir="false" />
     </list>
@@ -375,12 +375,19 @@
       <option name="project" value="LOCAL" />
       <updated>1726773593265</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="@validator replaced with @field_validator (pydantic V2)">
+      <option name="closed" value="true" />
+      <created>1727119792443</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1727119792443</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Users added, User list displayed, User updated" />
     <MESSAGE value="URL issues fixed" />
     <MESSAGE value="All 4 methods for the all classes/tables created." />
     <MESSAGE value="All relationships and foreign keys created" />
@@ -405,6 +412,7 @@
     <MESSAGE value="More error handling needed." />
     <MESSAGE value="Unit test created for adding a session. Negative time to be avoided." />
     <MESSAGE value="Review of the previous codes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Review of the previous codes" />
+    <MESSAGE value="@validator replaced with @field_validator (pydantic V2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="@validator replaced with @field_validator (pydantic V2)" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, field_validator, FieldValidatorInfo
+from pydantic import BaseModel, Field, field_validator, FieldValidationInfo
 from datetime import date, time
 from typing import Optional
 
@@ -23,7 +23,7 @@ class SessionRequest(BaseModel):
     end_time: time
 
     @field_validator('end_time')
-    def check_time_difference(cls, end_time, info: FieldValidatorInfo):
+    def check_time_difference(cls, end_time, info: FieldValidationInfo):
         start_time = info.data.get('start_time')
         if start_time and end_time <= start_time:
             raise ValueError('End time must be after start time please.')
