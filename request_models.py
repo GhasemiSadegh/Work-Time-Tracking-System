@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, field_validator, FieldValidatorInfo
 from datetime import date, time
 from typing import Optional
 
@@ -22,11 +22,12 @@ class SessionRequest(BaseModel):
     start_time: time
     end_time: time
 
-    @validator('end_time')
-    def check_time_difference(self, end_time, values):
-        start_time = values.get('start_time')
+    @field_validator('end_time')
+    def check_time_difference(cls, end_time, info: FieldValidatorInfo):
+        start_time = info.data.get('start_time')
         if start_time and end_time <= start_time:
             raise ValueError('End time must be after start time please.')
+        return end_time
 
 
 class ProjectSessionRetriever(BaseModel):

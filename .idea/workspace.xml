@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="Unit test created for adding a session. Negative time to be avoided.">
+    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="Review of the previous codes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/request_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/request_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,19 +34,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python tests.Python tests in tests.py.executor": "Run",
-    "Python tests.Python tests in tests_main.py.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.models.executor": "Run",
-    "Python.request_models.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests in tests.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests_main.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.models.executor&quot;: &quot;Run&quot;,
+    &quot;Python.request_models.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\python2024\WorkTimeTrackingSystem\tests" />
@@ -368,12 +367,19 @@
       <option name="project" value="LOCAL" />
       <updated>1723918903165</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Review of the previous codes">
+      <option name="closed" value="true" />
+      <created>1726773593265</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1726773593265</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="post for new user and get for all users created" />
     <MESSAGE value="Users added, User list displayed, User updated" />
     <MESSAGE value="URL issues fixed" />
     <MESSAGE value="All 4 methods for the all classes/tables created." />
@@ -398,6 +404,7 @@
     <MESSAGE value="Unittest for adding user with incorrect input half created. Pydantic validation framework interferes with unit testing." />
     <MESSAGE value="More error handling needed." />
     <MESSAGE value="Unit test created for adding a session. Negative time to be avoided." />
-    <option name="LAST_COMMIT_MESSAGE" value="Unit test created for adding a session. Negative time to be avoided." />
+    <MESSAGE value="Review of the previous codes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Review of the previous codes" />
   </component>
 </project>
