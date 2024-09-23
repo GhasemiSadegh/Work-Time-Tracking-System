@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="@validator replaced with @field_validator (pydantic V2)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/request_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/request_models.py" afterDir="false" />
-    </list>
+    <list default="true" id="522a8ed7-f4cb-45b0-8353-06a44afb83b1" name="Changes" comment="Learning to add admin user rights" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -383,12 +380,19 @@
       <option name="project" value="LOCAL" />
       <updated>1727119792443</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Learning to add admin user rights">
+      <option name="closed" value="true" />
+      <created>1727121532573</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1727121532573</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="URL issues fixed" />
     <MESSAGE value="All 4 methods for the all classes/tables created." />
     <MESSAGE value="All relationships and foreign keys created" />
     <MESSAGE value="Data base removed. Looking for errors." />
@@ -413,6 +417,7 @@
     <MESSAGE value="Unit test created for adding a session. Negative time to be avoided." />
     <MESSAGE value="Review of the previous codes" />
     <MESSAGE value="@validator replaced with @field_validator (pydantic V2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="@validator replaced with @field_validator (pydantic V2)" />
+    <MESSAGE value="Learning to add admin user rights" />
+    <option name="LAST_COMMIT_MESSAGE" value="Learning to add admin user rights" />
   </component>
 </project>
